@@ -1,0 +1,27 @@
+/* PART 3: Base Styles */
+html {
+  /* This makes your nav links glide! */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0 24px;
+  background-color: #f4f6f8; /* Mission: Change page background */
+}
+
+h1 {
+  color: #2c3e50; /* Mission: Gives h1 color */
+}
+
+h2 {
+  color: #2980b9; /* Mission: Make h2s a different color */
+}
+
+/* PART 4: The Box Model */
+.box {
+  border: 3px dashed #2c3e50; /* Mission: dashed border, 3px thick */
+  padding: 60px;              /* Mission: 60px space inside the border */
+  margin: 40px 0;             /* Mission: 40px space above and below */
+  background-color: #ffffff;  /* Mission: light background color */
+}
