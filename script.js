@@ -1,4 +1,4 @@
-// Variable declaration (a labeled box holding a value)
+// Variable declaration 
 let labName = "Open Lab Hours";
 console.log("Welcome to " + labName);
 
@@ -7,17 +7,24 @@ function sayHi() {
   console.log("Hi! Thanks for visiting.");
 }
 
-// Mission: Make "Hi! Thanks for visiting." show up by calling the function
 sayHi();
 
-// Mission: Make a variable meetingDay and make the console say something like We meet on Tuesdays.
 let meetingDay = "We meet Tuesday through Thursday.";
 console.log(meetingDay);
 
-// Mission: Write your own function sayBye that prints a goodbye, and make it run twice.
 function sayBye() {
   console.log("Goodbye! Have a great lab session.");
 }
 
 sayBye();
 sayBye();
+
+// Day 2 Part 6: Button Logic
+let nextButton = document.querySelector("#next-btn");
+let nextMeeting = document.querySelector("#next-meeting");
+
+function showNextMeeting() {
+  nextMeeting.textContent = "Our next meeting is Tuesday, Nov 3 at 4:00 PM.";
+}
+
+nextButton.addEventListener("click", showNextMeeting);

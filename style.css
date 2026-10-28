@@ -1,27 +1,63 @@
+* {
+  /* Added for Day 2 Part 4 */
+  box-sizing: border-box;
+}
+
 /* PART 3: Base Styles */
 html {
-  /* This makes your nav links glide! */
   scroll-behavior: smooth;
 }
 
 body {
   font-family: Arial, sans-serif;
   margin: 0 24px;
-  background-color: #f4f6f8; /* Mission: Change page background */
+  background-color: #f4f6f8; 
 }
 
 h1 {
-  color: #2c3e50; /* Mission: Gives h1 color */
+  color: #2c3e50; 
 }
 
 h2 {
-  color: #2980b9; /* Mission: Make h2s a different color */
+  color: #2980b9; 
 }
 
 /* PART 4: The Box Model */
 .box {
-  border: 3px dashed #2c3e50; /* Mission: dashed border, 3px thick */
-  padding: 60px;              /* Mission: 60px space inside the border */
-  margin: 40px 0;             /* Mission: 40px space above and below */
-  background-color: #ffffff;  /* Mission: light background color */
+  border: 3px dashed #2c3e50; 
+  padding: 60px;              
+  margin: 40px 0;             
+  background-color: #ffffff;  
+}
+
+/* Day 2 Part 4: Form Neatness */
+label {
+  display: block;
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  max-width: 30rem;
+  padding: 12px;
+  font: inherit;
+}
+
+button {
+  margin-top: 16px;
+  padding: 12px 24px;
+  font: inherit;
+}
+
+/* Day 2 Part 5: Pseudo-classes (Focus and Invalid) */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 4px solid #2980b9; /* Changed to match your club theme */
+  outline-offset: 2px;
+}
+
+input:user-invalid {
+  border: 3px solid crimson;
 }

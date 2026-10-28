@@ -3,26 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Update Title -->
   <title>Lab Usage Sign-Up</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- The Header -->
   <header> 
     <h1>Open Lab Hours</h1> 
     <p>Reserve your spot to use the equipment and workspace.</p> 
   </header>
 
-  <!-- The Navigation -->
   <nav>
     <a href="#about">About</a>
     <a href="#schedule">Schedule</a>
     <a href="#join">Reserve</a>
   </nav>
 
-  <!-- The Main Content -->
   <main>
     <section id="about" class="box">
       <h2>About the Lab</h2>
@@ -32,20 +28,41 @@
     <section id="schedule">
       <h2>Open Hours</h2>
       <p>The lab is open Tuesday through Thursday from 4:00 PM to 8:00 PM.</p>
+      <!-- Added for Day 2 Part 6 -->
+      <button id="next-btn">When is the next meeting?</button>
+      <p id="next-meeting"></p>
     </section>
 
     <section id="join">
       <h2>Reserve a Station</h2>
-      <p>Email labtech@school.edu with your requested date and time to reserve a spot.</p>
+      <p>Fill out this form to reserve your spot.</p>
+
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="equipment">Equipment Needed:</label>
+        <select id="equipment" name="equipment">
+          <option value="3d-printer">3D Printer</option>
+          <option value="soldering">Soldering Station</option>
+          <option value="mac-studio">Mac Studio</option>
+        </select>
+
+        <label for="message">Project Details:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Reserve Spot</button>
+      </form>
     </section>
   </main>
 
-  <!-- The Footer -->
   <footer>
     <p>Made by Mario</p>
   </footer>
 
-  <!-- JavaScript linked properly at the end of the body -->
   <script src="script.js"></script>
 </body>
 </html>
