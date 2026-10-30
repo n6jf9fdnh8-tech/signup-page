@@ -2,6 +2,22 @@
   box-sizing: border-box;
 }
 
+/* Day 4: shared colors, including the hero's RGBA transparency. */
+:root {
+  --page-bg: #f4f6f8;
+  --text-color: #2c3e50;
+  --brand-color: #1f618d;
+  --field-border: #667788;
+  --hero-bg: rgba(0, 100, 0, 0.85);
+}
+
+body.dark-mode {
+  --page-bg: #1a1a1a;
+  --text-color: #f4f6f8;
+  --brand-color: #4db8ff;
+  --field-border: #a8b4bf;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -9,25 +25,94 @@ html {
 body {
   font-family: Arial, sans-serif;
   margin: 0 24px;
-  background-color: #f4f6f8; 
+  background-color: var(--page-bg);
+  color: var(--text-color);
 }
 
-h1 {
-  color: #2c3e50; 
+header {
+  background-color: var(--brand-color);
+  color: var(--page-bg);
+  padding: 24px;
+  text-align: center;
+}
+
+header h1 {
+  color: var(--page-bg);
 }
 
 h2 {
-  color: #2980b9; 
+  color: var(--brand-color);
 }
 
+a {
+  color: var(--brand-color);
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 12px;
+}
+
+nav a {
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  outline: 2px solid currentColor;
+}
+
+/* Limit this override to navigation so it cannot change the CTA. */
+body.dark-mode nav a {
+  color: lightblue;
+}
+
+/* Day 1: preserve the required box-model dimensions. */
 .box {
-  border: 3px dashed #2c3e50; 
-  padding: 60px;              
-  margin: 40px 0;             
-  background-color: #ffffff;  
+  border: 3px dashed var(--text-color);
+  padding: 60px;
+  margin: 40px 0;
+  background-color: var(--page-bg);
 }
 
-/* Day 3 Part 2: Card Row with Flexbox */
+/* Day 4: dark green stays readable with white text in both themes. */
+.hero {
+  background-color: var(--hero-bg);
+  color: #ffffff;
+  text-align: center;
+  padding: 64px 24px;
+}
+
+.hero h2 {
+  color: #ffffff;
+}
+
+.cta {
+  display: inline-block;
+  background-color: gold;
+  color: #171717;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+.cta:hover {
+  background-color: orange;
+}
+
+@media (min-width: 700px) {
+  .hero h2 {
+    font-size: 3rem;
+  }
+}
+
 .cards {
   display: flex;
   gap: 16px;
@@ -36,45 +121,74 @@ h2 {
 
 .card {
   flex: 1 1 200px;
-  border: 2px solid #2980b9; 
+  min-width: 0;
+  border: 2px solid var(--brand-color);
   padding: 16px;
+  overflow-wrap: anywhere;
 }
 
-/* Day 3 Part 3: Show block vs inline dashed lines */
+/* Optional block-versus-inline demonstration. */
 .compare * {
   outline: 2px dashed tomato;
 }
 
-/* Form Neatness */
 label {
   display: block;
   font-weight: bold;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   max-width: 30rem;
+  min-width: 0;
   padding: 12px;
   font: inherit;
+  background-color: var(--page-bg);
+  color: var(--text-color);
+  border: 2px solid var(--field-border);
+}
+
+input::placeholder {
+  color: var(--text-color);
+  opacity: 1;
 }
 
 button {
   padding: 12px 24px;
   font: inherit;
+  background-color: var(--page-bg);
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  cursor: pointer;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 4px solid #2980b9; 
+  outline: 4px solid var(--brand-color);
   outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--text-color);
+  outline-offset: 3px;
+}
+
+header button:focus-visible {
+  outline-color: var(--page-bg);
+}
+
+.hero .cta:focus-visible {
+  outline-color: #ffffff;
 }
 
 input:user-invalid {
   border: 3px solid crimson;
 }
 
-/* Day 3 Part 4: Lay out the form with Flexbox */
 form {
   display: flex;
   flex-direction: column;
@@ -86,4 +200,5 @@ form {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  min-width: 0;
 }
