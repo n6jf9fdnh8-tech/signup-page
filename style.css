@@ -1,9 +1,7 @@
 * {
-  /* Added for Day 2 Part 4 */
   box-sizing: border-box;
 }
 
-/* PART 3: Base Styles */
 html {
   scroll-behavior: smooth;
 }
@@ -22,7 +20,6 @@ h2 {
   color: #2980b9; 
 }
 
-/* PART 4: The Box Model */
 .box {
   border: 3px dashed #2c3e50; 
   padding: 60px;              
@@ -30,10 +27,27 @@ h2 {
   background-color: #ffffff;  
 }
 
-/* Day 2 Part 4: Form Neatness */
+/* Day 3 Part 2: Card Row with Flexbox */
+.cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 200px;
+  border: 2px solid #2980b9; 
+  padding: 16px;
+}
+
+/* Day 3 Part 3: Show block vs inline dashed lines */
+.compare * {
+  outline: 2px dashed tomato;
+}
+
+/* Form Neatness */
 label {
   display: block;
-  margin-top: 16px;
   font-weight: bold;
 }
 
@@ -45,19 +59,31 @@ input, select, textarea {
 }
 
 button {
-  margin-top: 16px;
   padding: 12px 24px;
   font: inherit;
 }
 
-/* Day 2 Part 5: Pseudo-classes (Focus and Invalid) */
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 4px solid #2980b9; /* Changed to match your club theme */
+  outline: 4px solid #2980b9; 
   outline-offset: 2px;
 }
 
 input:user-invalid {
   border: 3px solid crimson;
+}
+
+/* Day 3 Part 4: Lay out the form with Flexbox */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 30rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
